@@ -110,9 +110,32 @@
         .text {
             font-family: 'Crimson Text', serif;
             margin-top: 24px;
-            margin-left: 164px;
-            margin-right: 164px;
+            margin-left: 15%;
+            margin-right: 15%;
             font-size: 32px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .article-title {
+                font-size: 24px; /* Smaller font size for mobile */
+                height: 60px; /* Adjust height */
+            }
+            .plotly-chart {
+                display: block; /* Stack the charts vertically on smaller screens */
+                width: 90%; /* Increase width for smaller screens */
+                margin: 10px auto; /* Center the charts and add space around them */
+            }
+            .video-container iframe {
+                width: 100%; /* Full width */
+                height: auto; /* Maintain aspect ratio */
+                top: 0; /* Reset position */
+            }
+            .text {
+                margin-left: 20px; /* Adjust left margin */
+                margin-right: 20px; /* Adjust right margin */
+                font-size: 24px; /* Smaller font size for text */
+            }
         }
     </style>
 </head>
