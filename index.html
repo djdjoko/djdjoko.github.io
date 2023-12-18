@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -36,6 +35,7 @@
             z-index: 10000; /* Ensures the title stays above other content */
             box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2); /* Shaded bottom border effect */
         }
+
         .chart-container {
             text-align: center; /* Center the inline-block elements */
             width: 100%; /* Take full width to align center */
@@ -47,35 +47,25 @@
             vertical-align: top; /* Aligns divs to the top if they are of different heights */
             margin: 0 2.5%; /* Optional: Add some space between the charts */
         }
+
         .video-section {
             text-align: center; /* Center the video container */
             padding-top: 100px; /* Space above the video container */
         }
 
-        .video-container {
-            overflow: hidden; /* Hide the overflow to crop the video */
+        .video-container, .video-container iframe {
+            max-width: 100%; /* Ensures the container doesn't exceed the viewport width */
+            height: auto; /* Maintain aspect ratio */
             position: relative; /* Positioning context for the iframe */
-            width: 600px; /* Width of the video container */
-            height: 400px; /* Height of the video container (adjust to control cropping) */
             margin: auto; /* Center the container horizontally */
         }
-
-        .video-container iframe {
-            position: absolute; /* Position the iframe absolutely within its container */
-            top: -100px; /* Push the iframe up to crop the top */
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 600px; /* Width of the iframe (should match container) */
-            height: 600px; /* Height of the iframe (greater than container to allow for cropping) */
-        }
-
 
         .segment-info {
             display: flex;
             align-items: center; /* Adjust vertical alignment */
             gap: 10px; /* Space between items */
         }
+
         hr {
             border: 0; /* Removes the default border */
             height: 1px; /* Sets the height of the line */
@@ -126,11 +116,6 @@
                 width: 90%; /* Increase width for smaller screens */
                 margin: 10px auto; /* Center the charts and add space around them */
             }
-            .video-container iframe {
-                width: 100%; /* Full width */
-                height: auto; /* Maintain aspect ratio */
-                top: 0; /* Reset position */
-            }
             .text {
                 margin-left: 20px; /* Adjust left margin */
                 margin-right: 20px; /* Adjust right margin */
@@ -138,6 +123,7 @@
             }
         }
     </style>
+
 </head>
 <body>
     <header>
