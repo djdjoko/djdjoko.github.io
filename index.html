@@ -105,7 +105,20 @@
             font-size: 32px;
         }
 
-        /* Responsive Styles */
+        .video-section, .segments {
+            text-align: center; /* Center the content */
+            width: 80%; /* Consistent width for all content */
+            max-width: 600px; /* Maximum width */
+            margin: auto; /* Center the section horizontally */
+        }
+
+        .video-container, .video-container iframe {
+            width: 100%; /* Full width within its container */
+            height: auto; /* Maintain aspect ratio */
+            position: relative; /* Positioning context for the iframe */
+        }
+
+        /* Adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .article-title {
                 font-size: 24px; /* Smaller font size for mobile */
@@ -113,15 +126,17 @@
             }
             .plotly-chart {
                 display: block; /* Stack the charts vertically on smaller screens */
-                width: 90%; /* Increase width for smaller screens */
+                width: 100%; /* Full width for smaller screens */
                 margin: 10px auto; /* Center the charts and add space around them */
             }
+            .video-section, .segments {
+                width: 90%; /* Increase width for smaller screens */
+            }
             .text {
-                margin-left: 20px; /* Adjust left margin */
-                margin-right: 20px; /* Adjust right margin */
+                margin-left: 5%; /* Smaller margins for mobile */
+                margin-right: 5%;
                 font-size: 24px; /* Smaller font size for text */
             }
-        }
     </style>
 
 </head>
