@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -15,61 +16,65 @@
         }
 
         body {
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            background-color: rgb(253, 241, 230); /* Set the background color here */
+            background-color: rgb(253, 241, 230); /* Set the background color */
         }
 
         .article-title {
             position: fixed;
-            top: 0; /* Aligns the title at the top of the page */
-            width: 100%; /* Ensures the title stretches across the full width */
+            top: 0;
+            width: 100%;
             height: 75px;
             background-color: rgb(253, 241, 230);
             font-family: 'Crimson Text', serif;
             font-size: 42px;
             text-align: center;
             display: flex;
-            align-items: center; /* Centers content vertically */
-            justify-content: center; /* Centers content horizontally */
-            z-index: 10000; /* Ensures the title stays above other content */
-            box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2); /* Shaded bottom border effect */
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-section {
+            padding-top: 100px; /* Space to clear the fixed header */
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 600px; /* Maximum width of the container */
+            margin: 0 auto; /* Center the container */
+            width: 100%; /* Full width within its container */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: auto; /* Adjust height automatically */
+            aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
         }
 
         .chart-container {
-            text-align: center; /* Center the inline-block elements */
-            width: 100%; /* Take full width to align center */
+            text-align: center;
+            width: 100%;
         }
 
         .plotly-chart {
             display: inline-block;
-            width: 40%; /* Adjust the width as needed */
-            vertical-align: top; /* Aligns divs to the top if they are of different heights */
-            margin: 0 2.5%; /* Optional: Add some space between the charts */
-        }
-
-        .video-section {
-            text-align: center; /* Center the video container */
-            padding-top: 100px; /* Space above the video container */
-        }
-
-        .video-container, .video-container iframe {
-            max-width: 100%; /* Ensures the container doesn't exceed the viewport width */
-            height: auto; /* Maintain aspect ratio */
-            position: relative; /* Positioning context for the iframe */
-            margin: auto; /* Center the container horizontally */
+            width: 40%;
+            vertical-align: top;
+            margin: 0 2.5%;
         }
 
         .segment-info {
             display: flex;
-            align-items: center; /* Adjust vertical alignment */
-            gap: 10px; /* Space between items */
+            align-items: center;
+            gap: 10px;
         }
 
         hr {
-            border: 0; /* Removes the default border */
-            height: 1px; /* Sets the height of the line */
-            background-color: rgb(203, 193, 185); /* Sets the color of the line */
+            border: 0;
+            height: 1px;
+            background-color: rgb(203, 193, 185);
         }
 
         .segments {
@@ -83,14 +88,7 @@
             margin-bottom: 20px;
         }
 
-        .speaker {
-            font-family: 'Crimson Text', serif;
-            font-weight: bold;
-            margin-top: 13px;
-            font-size: 20px;
-        }
-
-        .time {
+        .speaker, .time {
             font-family: 'Crimson Text', serif;
             color: #777;
             margin-top: 13px;
@@ -105,39 +103,25 @@
             font-size: 32px;
         }
 
-        .video-section, .segments {
-            text-align: center; /* Center the content */
-            width: 80%; /* Consistent width for all content */
-            max-width: 600px; /* Maximum width */
-            margin: auto; /* Center the section horizontally */
-        }
-
-        .video-container, .video-container iframe {
-            width: 100%; /* Full width within its container */
-            height: auto; /* Maintain aspect ratio */
-            position: relative; /* Positioning context for the iframe */
-        }
-
         /* Adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .article-title {
-                font-size: 24px; /* Smaller font size for mobile */
-                height: 60px; /* Adjust height */
+                font-size: 24px;
+                height: 60px;
             }
             .plotly-chart {
-                display: block; /* Stack the charts vertically on smaller screens */
-                width: 100%; /* Full width for smaller screens */
-                margin: 10px auto; /* Center the charts and add space around them */
-            }
-            .video-section, .segments {
-                width: 90%; /* Increase width for smaller screens */
+                display: block;
+                width: 100%;
+                margin: 10px auto;
             }
             .text {
-                margin-left: 5%; /* Smaller margins for mobile */
+                margin-left: 5%;
                 margin-right: 5%;
-                font-size: 24px; /* Smaller font size for text */
+                font-size: 24px;
             }
+        }
     </style>
+
 
 </head>
 <body>
