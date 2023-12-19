@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet"> <!-- Importing Crimson Text font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet"> <!-- Importing Outfit font -->
     <style>
         /* Base styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Outfit', sans-serif; /* Using Outfit font */
             line-height: 1.6;
             padding: 20px;
             background-color: rgb(253, 241, 230);
@@ -25,7 +27,7 @@
             right: 0;
             height: 75px;
             background-color: rgb(253, 241, 230);
-            font-family: 'Crimson Text', serif;
+            font-family: 'Crimson Text', serif; /* Using Crimson Text font */
             font-size: 42px;
             text-align: center;
             display: flex;
@@ -42,8 +44,7 @@
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 10px;
+            margin-bottom: 10px; /* Adjust spacing */
         }
 
         nav a {
@@ -59,7 +60,6 @@
 
             nav ul li {
                 display: block;
-                margin-bottom: 5px;
             }
         }
     </style>
@@ -70,7 +70,7 @@
         <nav>
             <ul>
                 <li><a href="diarization.html">Diarization</a></li>
-                <li><a href="output.html">Output</a></li>
+                <li><a href="kalman.html">Kalman Filter</a></li>
             </ul>
         </nav>
     </header>
