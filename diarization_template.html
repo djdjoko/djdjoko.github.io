@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article_title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+
+</head>
+<body>
+    <header>
+        <p class="article-title">{{ article_title }}</p>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <div class="video-container">
+                <iframe src="{{ video_url }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <section class="segments">
+            {% for segment in segments %}
+            <div class="segment">
+                <div class="segment-info">
+                    <p class="speaker"><b>{{ segment["speaker"] }}:</b></p>
+                    <p class="time"> [{{ segment["time"]}}]</p>
+                </div>
+                <p class="quotation" style="text-align: center;">"{{ segment["text"] }}"</p>
+                <!-- Display the Plotly chart for each segment -->
+                <div class="chart-container">
+                    <div class="plotly-chart" id="plotly-chart-wordcount-{{ loop.index }}">
+                        {{ segment['chart_wordcount'] | safe }}
+                    </div>
+                    <div class="plotly-chart" id="plotly-chart-semanticsimilarity-{{ loop.index }}">
+                        {{ segment['chart_semanticsimilarity'] | safe }}
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
